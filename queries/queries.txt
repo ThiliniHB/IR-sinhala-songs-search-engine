@@ -1,0 +1,41 @@
+--top 10 songs
+
+http://localhost:8983/solr/songs/select?omitHeader=true&=&q=*:*&rows=10&sort=views+desc&fl=lyrics+views
+
+--top 10 classics songs
+
+http://localhost:8983/solr/songs/select?omitHeader=true&df=genre&q=Classics&rows=10&sort=views+desc&fl=lyrics+views+genre
+
+--songs about sri lanka
+
+http://localhost:8983/solr/songs/select?omitHeader=true&df=lyrics&q=ශ්රී+ලංකාව&rows=10&fl=lyrics+title+genre
+
+--songs about mother
+
+http://localhost:8983/solr/songs/select?omitHeader=true&df=lyrics&q=අම්මා&rows=10&fl=lyrics+title
+
+--song from lyrics
+
+http://localhost:8983/solr/songs/select?omitHeader=true&df=lyrics&q=කිංකිණි හඬ පරදන&rows=10&fl=lyrics+title
+
+--popular songs of Milton Mallawarachchi
+
+http://localhost:8983/solr/songs/select?omitHeader=true&df=artist&q=Milton+Mallawarachchi&rows=10&fl=title+artist+lyrics+views
+
+
+--inspirational songs of sunil edirisinghe
+
+http://localhost:8983/solr/songs/select?omitHeader=true&q=*:*&rows=10&fq=artist:sunil+edirisinghe&fq=genre:Inspirational&fl=lyrics+title+artist+genre
+
+--Most popular 10 Songs of sunil edirisinghe which are not Old Pops
+
+http://localhost:8983/solr/songs/select?omitHeader=true&q=*:*&rows=10&fq=artist:sunil+edirisinghe&fq=-genre:(Old+Pops)&sort=views+desc&fl=lyrics+title+artist+genre+views
+
+
+
+
+
+
+
+
+
